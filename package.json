@@ -1,0 +1,38 @@
+{
+  "name": "civilizatio",
+  "version": "1.0.0",
+  "description": "tdzl2003's civilizatio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdzl2003/civilizatio.git"
+  },
+  "keywords": [
+    "game",
+    "react",
+    "web"
+  ],
+  "author": "tdzl2003",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdzl2003/civilizatio/issues"
+  },
+  "homepage": "https://github.com/tdzl2003/civilizatio#readme",
+  "devDependencies": {
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.19.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "less-loader": "^2.2.1",
+    "minimist": "^1.2.0",
+    "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
+  }
+}
