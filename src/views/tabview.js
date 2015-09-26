@@ -3,6 +3,8 @@
  */
 import React from 'react';
 
+import "./tabview.less";
+
 export default class TabView extends React.Component
 {
     constructor(props){
@@ -23,7 +25,9 @@ export default class TabView extends React.Component
                     {
                         this.props.children.map((v, i)=>{
                             return (
-                                <div className={["tab-view-tab", (i == this.state.index)?"active":""].join(' ')}
+                                <div
+                                    key={v.props.title}
+                                    className={["tab-view-tab", (i == this.state.index)?"active":""].join(' ')}
                                      onClick={()=>this.select(i)}
                                     >
                                     {v.props.title}
@@ -32,9 +36,9 @@ export default class TabView extends React.Component
                         })
                     }
                 </div>
-                {
-                    this.props.children[this.state.index]
-                }
+                <div className="tab-view-content">
+                    {this.props.children[this.state.index]}
+                </div>
             </div>
         )
     }

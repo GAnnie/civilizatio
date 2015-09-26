@@ -55,6 +55,10 @@ var config = {
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
             },
             {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
                 test: /\.gif/,
                 loader: 'url-loader?limit=10000&mimetype=image/gif'
             },

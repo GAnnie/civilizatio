@@ -1,0 +1,31 @@
+
+.tab-view {
+    display:flex;
+    flex-flow: column;
+
+    .tab-view-header {
+        display: flex;
+        flex-flow: row;
+        flex: 0 0 auto;
+        justify-content: flex-start;
+
+        overflow: auto;
+
+        .tab-view-tab {
+            flex: 0 0 auto;
+            padding: 0 5px;
+            margin: 0 2px;
+            border: solid 1px;
+        }
+        .tab-view-tab.active {
+            background-color: #219161;
+        }
+    }
+    .tab-view-content {
+        flex: 1 0 auto;
+        align-items: stretch;
+        > *{
+            flex: 1 0 0;
+        }
+    }
+}

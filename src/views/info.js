@@ -6,6 +6,9 @@ import React from 'react';
 
 import TabView from './tabview';
 
+import ResourceInfo from './infos/resource';
+import PopulationInfo from './infos/population';
+
 export default class Info extends React.Component
 {
     render(){
@@ -13,10 +16,10 @@ export default class Info extends React.Component
             <div className="info">
                 <TabView>
                     <TabView.Element title="资源">
-                        这里是资源页面
+                        <ResourceInfo />
                     </TabView.Element>
                     <TabView.Element title="人口">
-                        这里是人口页面
+                        <PopulationInfo />
                     </TabView.Element>
                 </TabView>
             </div>

@@ -7,6 +7,8 @@ import React from 'react';
 import Main from './main';
 import Info from './info';
 
+import "./root.less";
+
 export default class AppRoot extends React.Component
 {
     constructor(props){

@@ -1,0 +1,11 @@
+{
+  "gatherFruits": {
+    "foodCost": 6,
+    "time": 6,
+    "cost": {
+    },
+    "result":{
+      "food": 10
+    }
+  }
+}
