@@ -7,7 +7,12 @@ import React from 'react';
 
 import AppRoot from './views/root';
 
+import {Provider} from 'redux-viewmodel';
+import RootViewModel from './viewmodels/root';
 
 window.addEventListener('load', ()=>{
-    React.render(<AppRoot/>, document.body);
+    React.render(
+        <Provider viewModel={RootViewModel.instance} viewClass={AppRoot}>
+        </Provider>
+    , document.body);
 })

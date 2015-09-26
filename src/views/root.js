@@ -17,8 +17,8 @@ export default class AppRoot extends React.Component
     render(){
         return (
             <div className="root">
-                <Main />
-                <Info />
+                <Main {...this.props}/>
+                <Info {...this.props}/>
             </div>
         );
     }

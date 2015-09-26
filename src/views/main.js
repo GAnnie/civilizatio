@@ -14,7 +14,7 @@ export default class Main extends React.Component
             <div className="main">
                 <TabView>
                     <TabView.Element title="生产">
-                        <ProducePlan />
+                        <ProducePlan produce={this.props.produce}/>
                     </TabView.Element>
                     <TabView.Element title="设施">
                     </TabView.Element>

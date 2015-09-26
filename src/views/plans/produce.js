@@ -7,12 +7,11 @@ import * as ProduceString from '../../language/produce-strings.json';
 
 import "./produce.less";
 
-const mockupData = [
-    {
-        name: 'gatherFruits',
-        maxWorkers: 1
-    }
-];
+import ProduceListViewModel from "../../viewmodels/plan/produce.js";
+
+import Editable from "../editable.js";
+
+let produce = ProduceListViewModel.instance;
 
 export default class ProducePlan extends React.Component
 {
@@ -20,13 +19,25 @@ export default class ProducePlan extends React.Component
         return (
             <ul className="produce-plan">
                 {
-                    mockupData.map(v=>(
+                    this.props.produce.map(v=>(
                         <li
-                            key={v.name}
+                            key={v.key}
                             className="produce-plan-item"
                             >
-                            <span className="produce-name">{v.name}</span>
-                            <span className="produce-max-workers">{v.maxWorkers}</span>
+                            <span className="produce-name">{ProduceString[v.key]}</span>
+                            <Editable
+                                onEditOver={(newValue)=>{
+                                    newValue = parseInt(newValue);
+                                    if (isNaN(newValue)){
+                                        return;
+                                    }
+                                    produce.getItemByKey(v.key).dispatch("setValue", newValue)
+                                }}
+                                className="produce-max-workers"
+                                value={v.maxWorkers}
+                                />
+                            <button onClick={()=>produce.getItemByKey(v.key).dispatch("increment")}>+</button>
+                            <button onClick={()=>produce.getItemByKey(v.key).dispatch("decrement")}>-</button>
                         </li>
                     ))
                 }

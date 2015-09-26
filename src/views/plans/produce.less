@@ -2,10 +2,22 @@
 .produce-plan{
     display: flex;
     flex-flow: column;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 
     .produce-plan-item {
         list-style: none;
+        display:flex;
+        flex-flow: row;
+
+        .produce-name {
+            min-width: 80px;
+        }
+        .produce-max-workers{
+            margin: 0 5px;
+        }
+        input.produce-max-workers{
+            width: 20px;
+        }
     }
 }
