@@ -5,6 +5,9 @@
 import "./app.less";
 import React from 'react';
 
+import AppRoot from './views/root';
+
+
 window.addEventListener('load', ()=>{
-    React.render(<div>Hello</div>, document.body);
+    React.render(<AppRoot/>, document.body);
 })
