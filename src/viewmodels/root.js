@@ -4,6 +4,7 @@
 import {ViewModel} from 'redux-viewmodel';
 
 import ProduceListViewModel from './plan/produce';
+import PopulationViewModel from './population';
 
 let _instance;
 
@@ -15,10 +16,19 @@ export default class RootViewModel extends ViewModel
     }
     static get defaultState(){
         return {
-            produce:  ProduceListViewModel.defaultState
+            produce:  ProduceListViewModel.defaultState,
+            population: PopulationViewModel.defaultState,
         }
     }
     get produce(){
         return this._produce = this._produce || this.getSubViewModel('produce', ProduceListViewModel);
     }
+    get population(){
+        return this._population = this._population || this.getSubViewModel('population', PopulationViewModel);
+    }
+    tick(state){
+        return state;
+    }
 }
+
+setInterval(RootViewModel.instance.dispatch('tick'), 1000);

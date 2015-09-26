@@ -6,27 +6,11 @@ import {ViewModel, ListViewModel} from 'redux-viewmodel';
 
 import RootViewModel from '../root.js';
 
+import IntegerViewModel from '../base/integer';
+
 class ProduceViewModel extends ViewModel{
-    increment(state){
-        return {
-            ...state,
-            maxWorkers: state.maxWorkers + 1
-        }
-    }
-    decrement(state){
-        if (state.maxWorkers > 0) {
-            return {
-                ...state,
-                maxWorkers: state.maxWorkers - 1
-            }
-        }
-        return state;
-    }
-    setValue(state, val){
-        return {
-            ...state,
-            maxWorkers: val
-        }
+    get maxWorkers(){
+        return this.getSubViewModel('maxWorkers', IntegerViewModel);
     }
 }
 

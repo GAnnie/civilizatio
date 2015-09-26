@@ -5,10 +5,10 @@
 import "./app.less";
 import React from 'react';
 
-import AppRoot from './views/root';
-
 import {Provider} from 'redux-viewmodel';
 import RootViewModel from './viewmodels/root';
+
+import AppRoot from './views/root';
 
 window.addEventListener('load', ()=>{
     React.render(

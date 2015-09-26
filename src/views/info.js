@@ -16,10 +16,10 @@ export default class Info extends React.Component
             <div className="info">
                 <TabView>
                     <TabView.Element title="资源">
-                        <ResourceInfo />
+                        <ResourceInfo/>
                     </TabView.Element>
                     <TabView.Element title="人口">
-                        <PopulationInfo />
+                        <PopulationInfo population={this.props.population}/>
                     </TabView.Element>
                 </TabView>
             </div>
